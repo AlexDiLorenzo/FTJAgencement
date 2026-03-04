@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos Réalisations · FJT Agencement</title>
+<meta name="description" content="Découvrez toutes les réalisations de FJT Agencement : cuisines, claustras, dressings, rangements et meubles sur mesure en Île-de-France.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --timber:#6B4226;--timber-mid:#8B6342;--timber-light:#A6845A;--timber-pale:#C4A87A;
+  --bark:#3A2416;--ebony:#1E110A;
+  --cream:#FDF8F0;--linen:#F0E8DA;--sand:#E2D5C0;--parchment:#FAF5EC;
+  --text:#2A1A0E;--text-mid:#5C4A3A;--text-soft:#8A7A6A;--text-faint:#B0A090;
+  --white:#FFFDF8;
+  --display:'Playfair Display',Georgia,serif;
+  --body:'Nunito Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--cream);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;transition:all .5s;background:rgba(58,36,22,.6);backdrop-filter:blur(10px)}
+nav.scrolled{background:rgba(253,248,240,.97);backdrop-filter:blur(14px);box-shadow:0 2px 20px rgba(30,17,10,.06);padding:.7rem 3rem}
+.nav-logo img{height:56px;transition:all .4s}
+nav.scrolled .nav-logo img{height:44px}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.82rem;color:rgba(255,253,248,.9);letter-spacing:.06em;transition:color .3s}
+nav.scrolled .nav-links a{color:var(--timber)}
+.nav-links a:hover{color:var(--timber-pale)}
+nav.scrolled .nav-links a:hover{color:var(--timber-light)}
+.nav-links a.active{color:var(--timber-pale)!important}
+nav.scrolled .nav-links a.active{color:var(--timber)!important;border-bottom:2px solid var(--timber)}
+.nav-cta{background:var(--timber)!important;color:var(--white)!important;padding:.6rem 1.6rem;border-radius:6px;transition:all .3s!important}
+.nav-cta:hover{background:var(--timber-mid)!important;transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1001}
+.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:all .3s}
+nav.scrolled .hamburger span{background:var(--timber)}
+
+/* HERO BANNER */
+.hero-banner{
+  min-height:38vh;display:flex;align-items:flex-end;justify-content:flex-start;
+  position:relative;overflow:hidden;padding:4rem 3rem 3.5rem;
+}
+.hero-banner::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background:url('img/wood-texture.jpg') center/cover;
+  filter:brightness(.35) saturate(1.2);
+}
+.hero-banner::after{
+  content:'';position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg, rgba(30,17,10,.7) 0%, rgba(58,36,22,.4) 100%);
+}
+.hero-banner-content{position:relative;z-index:2;max-width:700px}
+.hero-banner-back{
+  display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.8rem;
+  color:rgba(255,253,248,.55);font-size:.78rem;font-weight:600;letter-spacing:.08em;
+  text-decoration:none;text-transform:uppercase;transition:color .3s;
+}
+.hero-banner-back:hover{color:var(--timber-pale)}
+.hero-banner-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;transform:rotate(180deg)}
+.hero-banner-eyebrow{
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--timber-pale);margin-bottom:.8rem;font-weight:700;
+  display:flex;align-items:center;gap:.7rem;
+}
+.hero-banner-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--timber-pale)}
+.hero-banner h1{
+  font-family:var(--display);font-size:clamp(2.2rem,4.5vw,3.4rem);color:var(--white);
+  line-height:1.1;font-weight:700;letter-spacing:.02em;margin-bottom:.8rem;
+}
+.hero-banner h1 em{color:var(--timber-pale);font-style:italic;font-weight:500}
+.hero-banner-meta{
+  font-size:.82rem;color:rgba(255,253,248,.45);letter-spacing:.08em;
+  display:flex;align-items:center;gap:.8rem;
+}
+.hero-banner-meta span{color:rgba(255,253,248,.25)}
+
+/* GRAIN DIVIDER */
+.grain-sep{display:flex;align-items:center;gap:14px;margin:0 auto;padding:2.2rem 0 0}
+.grain-sep::before,.grain-sep::after{content:'';flex:1;height:1px;background:var(--sand)}
+.grain-diamond{width:8px;height:8px;background:var(--timber-pale);transform:rotate(45deg);flex-shrink:0}
+
+/* FILTER BAR */
+.filter-bar{
+  background:var(--parchment);border-bottom:1px solid var(--sand);
+  position:sticky;top:0;z-index:100;
+  padding:.9rem 2rem;
+  box-shadow:0 2px 12px rgba(30,17,10,.04);
+}
+.filter-inner{
+  max-width:1300px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+}
+.filter-btns{display:flex;gap:.5rem;flex-wrap:wrap}
+.fb{
+  padding:.45rem 1.2rem;border-radius:40px;border:1.5px solid var(--sand);
+  background:transparent;color:var(--text-soft);font-family:var(--body);font-size:.78rem;
+  font-weight:600;cursor:pointer;transition:all .25s;letter-spacing:.04em;
+}
+.fb:hover{border-color:var(--timber-light);color:var(--timber)}
+.fb.active{background:var(--timber);border-color:var(--timber);color:var(--white)}
+.filter-count{font-size:.8rem;color:var(--text-faint);white-space:nowrap}
+.filter-count strong{color:var(--timber);font-weight:700}
+
+/* GALLERY GRID */
+.gal-section{padding:3rem 2rem 5rem;background:var(--cream)}
+.gal-grid{
+  max-width:1300px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+}
+.gal-card{
+  position:relative;border-radius:10px;overflow:hidden;
+  aspect-ratio:4/3;cursor:pointer;
+  transition:transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s;
+  background:var(--sand);
+}
+.gal-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(30,17,10,.18)}
+.gal-card img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform .6s cubic-bezier(.22,1,.36,1);display:block;
+}
+.gal-card:hover img{transform:scale(1.07)}
+.gal-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(30,17,10,.9) 0%, rgba(30,17,10,.3) 45%, transparent 100%);
+  opacity:0;transition:opacity .4s;
+}
+.gal-card:hover .gal-overlay{opacity:1}
+.gal-badge{
+  position:absolute;top:12px;left:12px;z-index:2;
+  background:rgba(30,17,10,.7);backdrop-filter:blur(6px);
+  color:var(--timber-pale);font-size:.64rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;padding:.28rem .75rem;border-radius:30px;
+  border:1px solid rgba(196,168,122,.2);
+  transition:all .3s;
+}
+.gal-card:hover .gal-badge{background:var(--timber);color:var(--white)}
+.gal-info{
+  position:absolute;bottom:0;left:0;right:0;padding:1.4rem 1.4rem 1.2rem;z-index:2;
+  transform:translateY(8px);opacity:0;transition:all .4s cubic-bezier(.22,1,.36,1);
+}
+.gal-card:hover .gal-info{transform:translateY(0);opacity:1}
+.gal-title{
+  font-family:var(--display);font-size:1.05rem;font-weight:600;
+  color:var(--white);margin-bottom:.3rem;letter-spacing:.02em;
+}
+.gal-desc{font-size:.78rem;color:rgba(255,253,248,.65);line-height:1.45;font-weight:300}
+.gal-card.hidden{display:none}
+
+/* NO RESULTS */
+.no-results{
+  grid-column:1/-1;text-align:center;padding:4rem;
+  color:var(--text-faint);font-size:.95rem;display:none;
+}
+.no-results.show{display:block}
+
+/* LIGHTBOX */
+.lb{
+  display:none;position:fixed;inset:0;
+  background:rgba(20,12,6,.96);z-index:2000;
+  flex-direction:column;align-items:center;justify-content:center;
+  padding:1.5rem;
+}
+.lb.on{display:flex}
+.lb-top{
+  position:absolute;top:0;left:0;right:0;
+  padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;
+  background:linear-gradient(to bottom,rgba(20,12,6,.8),transparent);
+}
+.lb-counter{font-size:.8rem;color:rgba(255,253,248,.4);letter-spacing:.08em}
+.lb-close{
+  background:rgba(255,253,248,.08);border:1px solid rgba(255,253,248,.1);
+  color:rgba(255,253,248,.7);width:38px;height:38px;border-radius:50%;
+  font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all .25s;
+}
+.lb-close:hover{background:rgba(255,253,248,.15);color:var(--white)}
+.lb-img-wrap{
+  max-width:calc(100vw - 12rem);max-height:75vh;
+  display:flex;align-items:center;justify-content:center;position:relative;
+}
+.lb-img-wrap img{
+  max-width:100%;max-height:75vh;object-fit:contain;
+  border-radius:6px;box-shadow:0 20px 80px rgba(0,0,0,.6);
+}
+.lb-nav{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(255,253,248,.08);border:1px solid rgba(255,253,248,.12);
+  color:rgba(255,253,248,.8);width:46px;height:46px;border-radius:50%;
+  font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all .25s;
+}
+.lb-nav:hover{background:rgba(255,253,248,.18);color:var(--white)}
+.lb-nav.prev{left:-5rem}
+.lb-nav.next{right:-5rem}
+.lb-nav:disabled{opacity:.2;cursor:default}
+.lb-bottom{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:1.5rem 2rem;text-align:center;
+  background:linear-gradient(to top,rgba(20,12,6,.8),transparent);
+}
+.lb-title-txt{font-family:var(--display);font-size:1rem;color:var(--white);font-weight:600;margin-bottom:.25rem}
+.lb-desc-txt{font-size:.8rem;color:rgba(255,253,248,.5);font-weight:300}
+
+/* CTA BOTTOM */
+.gal-cta{
+  background:var(--bark);padding:3.5rem 2rem;text-align:center;
+  position:relative;overflow:hidden;
+}
+.gal-cta::before{
+  content:'';position:absolute;inset:0;
+  background:url('img/wood-texture.jpg') center/cover;
+  opacity:.07;pointer-events:none;
+}
+.gal-cta h2{
+  font-family:var(--display);font-size:clamp(1.6rem,3vw,2.2rem);
+  color:var(--white);font-weight:600;margin-bottom:.6rem;letter-spacing:.02em;
+}
+.gal-cta p{color:rgba(255,253,248,.5);font-size:.9rem;margin-bottom:2rem}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 2.2rem;
+  background:var(--timber);color:var(--white);text-decoration:none;
+  font-weight:700;font-size:.85rem;border-radius:8px;border:none;cursor:pointer;
+  transition:all .35s;letter-spacing:.04em;font-family:var(--body);
+}
+.btn-primary:hover{background:var(--timber-mid);transform:translateY(-2px);box-shadow:0 8px 24px rgba(107,66,38,.35)}
+.btn-primary svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* FOOTER */
+footer{background:var(--ebony);color:rgba(255,253,248,.4);padding:2.5rem 2rem}
+.ft{max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.ft p{font-size:.78rem}
+.ft-links{display:flex;gap:1.8rem}
+.ft-links a{color:rgba(255,253,248,.4);text-decoration:none;font-size:.78rem;transition:color .3s}
+.ft-links a:hover{color:var(--timber-pale)}
+
+/* MOBILE MENU */
+.mmenu{display:none;position:fixed;inset:0;background:var(--ebony);z-index:999;flex-direction:column;justify-content:center;align-items:center;gap:2rem;opacity:0;pointer-events:none;transition:opacity .35s}
+.mmenu.on{opacity:1;pointer-events:all}
+.mmenu a{color:var(--white);text-decoration:none;font-family:var(--display);font-size:1.7rem;font-weight:600;transition:color .3s}
+.mmenu a:hover{color:var(--timber-pale)}
+.mmenu-x{position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:var(--white);font-size:1.6rem;cursor:pointer}
+
+@media(max-width:1024px){
+  nav{padding:.8rem 1.5rem}
+  .nav-links{display:none}.hamburger{display:flex}.mmenu{display:flex}
+  .hero-banner{padding:5rem 2rem 2.5rem;min-height:32vh}
+  .gal-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .filter-bar{position:relative;top:auto}
+  .lb-nav.prev{left:-1rem}.lb-nav.next{right:-1rem}
+  .lb-img-wrap{max-width:calc(100vw - 5rem)}
+}
+@media(max-width:640px){
+  nav{padding:.7rem 1.2rem}
+  .hero-banner{padding:5.5rem 1.2rem 2rem;min-height:28vh}
+  .hero-banner h1{font-size:1.9rem}
+  .gal-grid{grid-template-columns:1fr;gap:8px}
+  .gal-section{padding:1.5rem 1rem 4rem}
+  .filter-bar{padding:.7rem 1rem}
+  .fb{font-size:.72rem;padding:.38rem .9rem}
+  .lb-nav{display:none}
+  .lb-img-wrap{max-width:100%}
+  .ft{flex-direction:column;text-align:center}
+  .ft-links{flex-direction:column;gap:.6rem;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="FJT Agencement"></a>
+  <ul class="nav-links">
+    <li><a href="index.html#fondateur">Qui sommes-nous</a></li>
+    <li><a href="index.html#services">Prestations</a></li>
+    <li><a href="realisations.html" class="active">Réalisations</a></li>
+    <li><a href="index.html#avis">Avis</a></li>
+    <li><a href="index.html#devis" class="nav-cta">Devis gratuit</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleM()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mmenu" id="mm">
+  <button class="mmenu-x" onclick="toggleM()">&#10005;</button>
+  <a href="index.html#fondateur" onclick="toggleM()">Qui sommes-nous</a>
+  <a href="index.html#services" onclick="toggleM()">Prestations</a>
+  <a href="realisations.html" onclick="toggleM()">Réalisations</a>
+  <a href="index.html#avis" onclick="toggleM()">Avis</a>
+  <a href="index.html#devis" onclick="toggleM()">Devis gratuit</a>
+</div>
+
+<!-- HERO BANNER -->
+<div class="hero-banner">
+  <div class="hero-banner-content">
+    <a href="index.html" class="hero-banner-back">
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Retour à l'accueil
+    </a>
+    <div class="hero-banner-eyebrow">Portfolio</div>
+    <h1>Nos <em>réalisations</em></h1>
+    <div class="hero-banner-meta">
+      <span>24 projets</span>
+      <span>·</span>
+      <span>Cuisines · Claustras · Dressings · Rangements · Meubles</span>
+    </div>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <div class="filter-btns">
+      <button class="fb active" data-filter="all">Tout voir</button>
+      <button class="fb" data-filter="cuisine">Cuisine</button>
+      <button class="fb" data-filter="claustra">Claustra</button>
+      <button class="fb" data-filter="dressing">Dressing</button>
+      <button class="fb" data-filter="meuble">Meubles</button>
+      <button class="fb" data-filter="rangement">Rangement</button>
+    </div>
+    <div class="filter-count">Affichage : <strong id="visible-count">24</strong> réalisations</div>
+  </div>
+</div>
+
+<!-- GALLERY GRID -->
+<section class="gal-section">
+  <div class="gal-grid" id="gal-grid">
+
+    <!-- CUISINE -->
+    <div class="gal-card" data-cat="cuisine" onclick="openLB(this)">
+      <img src="img/cuisine.jpg" alt="Cuisine contemporaine sur mesure">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Cuisine</div>
+      <div class="gal-info">
+        <div class="gal-title">Cuisine contemporaine</div>
+        <div class="gal-desc">Pose complète avec plan de travail sur mesure et crédence</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="cuisine" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Cuisine.jpg" alt="Cuisine bois et laqué">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Cuisine</div>
+      <div class="gal-info">
+        <div class="gal-title">Cuisine bois et laqué</div>
+        <div class="gal-desc">Mélange chaleureux de bois naturel et de blanc laqué</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="claustra" onclick="openLB(this)">
+      <img src="img/claustra.jpg" alt="Claustra bois massif">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Claustra</div>
+      <div class="gal-info">
+        <div class="gal-title">Claustra bois massif</div>
+        <div class="gal-desc">Séparation d'espace décorative en lattes bois naturel</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="cuisine" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Cuisine (2).jpg" alt="Cuisine aménagée">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Cuisine</div>
+      <div class="gal-info">
+        <div class="gal-title">Cuisine aménagée</div>
+        <div class="gal-desc">Pose complète avec crédence carrelage et plan de travail</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="claustra" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Claustra.jpg" alt="Claustra contemporain">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Claustra</div>
+      <div class="gal-info">
+        <div class="gal-title">Claustra contemporain</div>
+        <div class="gal-desc">Panneau décoratif structurant en bois clair</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="dressing" onclick="openLB(this)">
+      <img src="img/dressing.jpg" alt="Dressing avec éclairage LED">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Dressing</div>
+      <div class="gal-info">
+        <div class="gal-title">Dressing avec éclairage</div>
+        <div class="gal-desc">Aménagement complet sur mesure avec bandeau LED intégré</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="rangement" onclick="openLB(this)">
+      <img src="img/bibliotheque.jpg" alt="Bibliothèque sur mesure">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Rangement</div>
+      <div class="gal-info">
+        <div class="gal-title">Bibliothèque sur mesure</div>
+        <div class="gal-desc">Médium laqué blanc avec niches et rangements intégrés</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="meuble" onclick="openLB(this)">
+      <img src="img/meuble-suspendu.jpg" alt="Meubles suspendus laqués">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Meuble</div>
+      <div class="gal-info">
+        <div class="gal-title">Meubles suspendus laqués</div>
+        <div class="gal-desc">Laqué gris anthracite, pose murale au millimètre</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="meuble" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Armoire.jpg" alt="Armoire encastrée">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Meuble</div>
+      <div class="gal-info">
+        <div class="gal-title">Armoire encastrée</div>
+        <div class="gal-desc">Aménagement complet sur mesure avec éclairage intégré</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="claustra" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Claustra_2.jpg" alt="Claustra moderne">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Claustra</div>
+      <div class="gal-info">
+        <div class="gal-title">Claustra moderne</div>
+        <div class="gal-desc">Séparation verticale bois naturel, finitions soignées</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="dressing" onclick="openLB(this)">
+      <img src="img/dressing_mélamime.jpg" alt="Dressing encastré mélamine">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Dressing</div>
+      <div class="gal-info">
+        <div class="gal-title">Dressing encastré</div>
+        <div class="gal-desc">Mélamine chêne clair avec penderie et tiroirs sur mesure</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="cuisine" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Cuisine (3).jpg" alt="Cuisine équipée">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Cuisine</div>
+      <div class="gal-info">
+        <div class="gal-title">Cuisine équipée sur mesure</div>
+        <div class="gal-desc">Optimisation d'espace avec colonnes intégrées et électroménager encastré</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="rangement" onclick="openLB(this)">
+      <img src="img/cave-a-vin.jpg" alt="Rangement cave à vin">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Rangement</div>
+      <div class="gal-info">
+        <div class="gal-title">Cave à vin sur mesure</div>
+        <div class="gal-desc">Contreplaqué peuplier avec casiers individuels et tablettes</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="claustra" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Claustra_3.jpg" alt="Claustra ajouré">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Claustra</div>
+      <div class="gal-info">
+        <div class="gal-title">Claustra ajouré</div>
+        <div class="gal-desc">Structure ajourée pour un jeu de lumière et d'ombre élégant</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="meuble" onclick="openLB(this)">
+      <img src="img/bureau.jpg" alt="Bureau sur mesure">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Meuble</div>
+      <div class="gal-info">
+        <div class="gal-title">Bureau sur mesure</div>
+        <div class="gal-desc">Contreplaqué peuplier, plateau chêne massif huilé</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="cuisine" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Cuisine (4).jpg" alt="Cuisine design">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Cuisine</div>
+      <div class="gal-info">
+        <div class="gal-title">Cuisine design</div>
+        <div class="gal-desc">Façades laquées avec plan de travail en quartz blanc</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="rangement" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Rangement.jpg" alt="Rangement multi-usage">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Rangement</div>
+      <div class="gal-info">
+        <div class="gal-title">Rangement multi-usage</div>
+        <div class="gal-desc">Bibliothèque et rangements polyvalents, médium peint</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="meuble" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Armoir.jpg" alt="Armoire bois massif">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Meuble</div>
+      <div class="gal-info">
+        <div class="gal-title">Armoire bois massif</div>
+        <div class="gal-desc">Menuiserie intérieure avec portes à galandage</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="cuisine" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Cuisine (5).jpg" alt="Cuisine ouverte">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Cuisine</div>
+      <div class="gal-info">
+        <div class="gal-title">Cuisine ouverte sur salon</div>
+        <div class="gal-desc">Agencement cuisine ouverte avec îlot central</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="rangement" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Rangement_2.jpg" alt="Rangement encastré">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Rangement</div>
+      <div class="gal-info">
+        <div class="gal-title">Rangement encastré</div>
+        <div class="gal-desc">Niche et rangements intégrés dans la cloison</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="meuble" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Etagere_suspendu.jpg" alt="Étagère suspendue chêne">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Meuble</div>
+      <div class="gal-info">
+        <div class="gal-title">Étagère suspendue</div>
+        <div class="gal-desc">Étagère flottante en chêne massif, installation murale</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="rangement" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Rangement (2).jpg" alt="Rangement intégré">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Rangement</div>
+      <div class="gal-info">
+        <div class="gal-title">Rangement intégré</div>
+        <div class="gal-desc">Solution de rangement sur mesure encastrée dans la cloison</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="rangement" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Rangement (3).jpg" alt="Rangement modulable">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Rangement</div>
+      <div class="gal-info">
+        <div class="gal-title">Rangement modulable</div>
+        <div class="gal-desc">Système de rangements combinés, optimisation maximale</div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="rangement" onclick="openLB(this)">
+      <img src="Images_supplémentaires/Rangement (5).jpg" alt="Rangement optimisé">
+      <div class="gal-overlay"></div>
+      <div class="gal-badge">Rangement</div>
+      <div class="gal-info">
+        <div class="gal-title">Rangement optimisé</div>
+        <div class="gal-desc">Aménagement conçu pour exploiter chaque centimètre disponible</div>
+      </div>
+    </div>
+
+    <div class="no-results" id="no-results">Aucune réalisation dans cette catégorie.</div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <div class="lb-top">
+    <div class="lb-counter" id="lb-counter">1 / 24</div>
+    <button class="lb-close" onclick="closeLB()">&#10005;</button>
+  </div>
+  <div class="lb-img-wrap">
+    <button class="lb-nav prev" id="lb-prev" onclick="lbPrev()">&#8592;</button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-nav next" id="lb-next" onclick="lbNext()">&#8594;</button>
+  </div>
+  <div class="lb-bottom">
+    <div class="lb-title-txt" id="lb-title"></div>
+    <div class="lb-desc-txt" id="lb-desc"></div>
+  </div>
+</div>
+
+<!-- CTA FOOTER SECTION -->
+<div class="gal-cta">
+  <h2>Un projet en tête ?</h2>
+  <p>Contactez-nous pour un devis gratuit et personnalisé.</p>
+  <a href="index.html#devis" class="btn-primary">
+    Demander un devis gratuit
+    <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+</div>
+
+<footer>
+  <div class="ft">
+    <p>&copy; 2025 FJT Agencement · Artisan Menuisier · Île-de-France</p>
+    <div class="ft-links">
+      <a href="mailto:menuiserie.TRT75@outlook.fr">menuiserie.TRT75@outlook.fr</a>
+      <a href="tel:0648369918">06 48 36 99 18</a>
+      <a href="https://instagram.com/fjtagencement" target="_blank">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+var nv=document.getElementById('nav');
+window.addEventListener('scroll',function(){nv.classList.toggle('scrolled',window.scrollY>60)});
+function toggleM(){document.getElementById('mm').classList.toggle('on')}
+
+// FILTER
+var allCards=document.querySelectorAll('.gal-card');
+var countEl=document.getElementById('visible-count');
+
+document.querySelectorAll('.fb').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var cat=this.dataset.filter;
+    document.querySelectorAll('.fb').forEach(function(b){b.classList.remove('active')});
+    this.classList.add('active');
+    var n=0;
+    allCards.forEach(function(card){
+      var show=cat==='all'||card.dataset.cat===cat;
+      card.classList.toggle('hidden',!show);
+      if(show)n++;
+    });
+    countEl.textContent=n;
+    document.getElementById('no-results').classList.toggle('show',n===0);
+  });
+});
+
+// LIGHTBOX
+var currentIdx=0;
+var visibleCards=[];
+
+function openLB(el){
+  visibleCards=Array.from(document.querySelectorAll('.gal-card:not(.hidden)'));
+  currentIdx=visibleCards.indexOf(el);
+  showLBItem(currentIdx);
+  document.getElementById('lb').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+
+function showLBItem(idx){
+  var card=visibleCards[idx];
+  // Get the last img in the card (in case there are 2 imgs, we want the actual photo)
+  var imgs=card.querySelectorAll('img');
+  var img=imgs[imgs.length-1];
+  var title=card.querySelector('.gal-title');
+  var desc=card.querySelector('.gal-desc');
+  document.getElementById('lb-img').src=img.src;
+  document.getElementById('lb-img').alt=img.alt;
+  document.getElementById('lb-title').textContent=title?title.textContent:'';
+  document.getElementById('lb-desc').textContent=desc?desc.textContent:'';
+  document.getElementById('lb-counter').textContent=(idx+1)+' / '+visibleCards.length;
+  document.getElementById('lb-prev').disabled=idx===0;
+  document.getElementById('lb-next').disabled=idx===visibleCards.length-1;
+}
+
+function lbPrev(){if(currentIdx>0){currentIdx--;showLBItem(currentIdx);}}
+function lbNext(){if(currentIdx<visibleCards.length-1){currentIdx++;showLBItem(currentIdx);}}
+
+function closeLB(){
+  document.getElementById('lb').classList.remove('on');
+  document.body.style.overflow='';
+}
+
+document.getElementById('lb').addEventListener('click',function(e){
+  if(e.target===this)closeLB();
+});
+
+document.addEventListener('keydown',function(e){
+  if(!document.getElementById('lb').classList.contains('on'))return;
+  if(e.key==='ArrowLeft')lbPrev();
+  if(e.key==='ArrowRight')lbNext();
+  if(e.key==='Escape')closeLB();
+});
+</script>
+</body>
+</html>
